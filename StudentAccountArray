@@ -1,0 +1,26 @@
+#Student Array Account Generator Katherine Fitzpatrick
+
+puts "Welcome to Ada Student Account Generator! \n\n"
+
+studentname = []
+studentid = []
+randomnumber = []
+adaemail =  "@adadevelopersacademy.org"
+
+i = 0
+p = 0
+
+while i < 5
+ puts " what is your First and Last name?"
+student_name = gets.chomp.upcase.to_s
+studentname <<student_name
+random_number = randomnumber.push(rand(111111..999999))
+i +=1
+end
+
+while p < 5
+studentname.each do |name|
+puts name.split[0].slice(0) + "#{name.split[1]}" + "#{random_number.sample.to_s.strip.chars.last(3).join}" + adaemail
+p +=1
+end
+end   
