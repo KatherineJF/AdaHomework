@@ -1,0 +1,44 @@
+#Katherine Fitzpatrick Election Program
+voters = []
+counts = {}
+dup_values = {}
+vote = 0
+maxvote = 0
+checkdup = 0
+i = 1
+p = 1
+
+puts"   Welcome to my election voting program.
+
+  Election candidates are: Donald Duck, Minnie Mouse, Goofy
+"
+while 
+i < 11
+puts "Vote #" + "#{i}"
+vote = gets.chomp.upcase.gsub(/ /, "_").to_sym
+voters << vote
+#group_by creates a hash based on the number of times a value appears in the voters_array. Key is the candidates and value is the number of times that value appeared in the voters_array
+voters.group_by(&:itself).each { |k,v| counts[k] = v.length }
+i += 1
+end
+
+puts " \n\n ELECTION RESULTS....
+
+Vote Summary:"
+
+counts.each do |key, value|
+ puts " #{key}" + " " + " -" + " " + 
+ " #{value}" + " " + "vote"
+maxvote = counts.values.max
+end
+
+  if counts.values.select {|v| v == maxvote}
+   dup_values = counts.select{ |k,v| v == (maxvote) } 
+  dup_values.each do |key,value|
+  puts "The winners are" + " " + "#{key} - #{value}" + " "+ "votes"
+end
+else if value = maxvote
+   checkdup = counts.key(maxvote)
+  puts "The winner is:" + checkdup
+end   
+end
