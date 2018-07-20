@@ -6,7 +6,6 @@ vote = 0
 maxvote = 0
 checkdup = 0
 i = 1
-p = 1
 
 puts"   Welcome to my election voting program.
 
